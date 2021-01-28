@@ -1,3 +1,4 @@
+//this is c code
 #include <stdio.h>
 int insert(int,int[]);
 int del(int,int[]);
