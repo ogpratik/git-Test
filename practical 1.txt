@@ -1,0 +1,71 @@
+#include <stdio.h>
+int insert(int,int[]);
+int del(int,int[]);
+int main()
+{
+    int n;
+    printf("\n Enter size of array:\n");
+    scanf("%d",&n);
+    int arr[n];
+    int i,ch;
+    char c, dummy;
+    printf("\n Enter elements of array:\n");
+    for(i=0;i<n;i++)
+{
+   scanf("%d",&arr[i]);
+}
+do
+{
+    printf("\n Menu");
+    printf("\n 1. Insert an element in array");
+    printf("2. Delete an element for array");
+    printf("\n Enter yout choice");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+     case 1:insert(n,arr);
+        break;
+     case 2:del(n,arr);
+        break;
+    }
+    printf("Do you want to continue(Y/N)?");
+    scanf("%c",&dummy);
+    scanf("%c",&c);
+}
+ while((c=='y')||(c=='Y'));
+}
+int insert(int n,int arr[])
+{
+int pos,i;
+printf("enter position");
+scanf("%d",&pos);
+int ele;
+printf("enter element");
+scanf("%d",&ele);
+if(pos>n)
+     printf("Invalid Input");
+else 
+{   
+    for (i=n-1;i>=pos-1;i--)
+      arr[i+1] = arr[i];
+    arr[pos-1] = ele;
+printf("Aray after insertion is:\n");
+
+   for (i=0; i<=n; i++)
+{printf("%d\n",arr[i]);}
+    }
+}
+int del(int n,int arr[])
+{
+int pos, i;
+printf("\n Enter the postion: ");
+scanf("%d",&pos);
+
+if (pos >= n+1)
+printf("\nDeletion not possible.\n");
+else 
+{
+for(i=pos-1;i<n-1;i++)
+printf("%d\n",arr[i]);
+}
+}
